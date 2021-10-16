@@ -18,12 +18,14 @@ function HomePage({hotels = []}: any) {
     setTheme(theme==='ligth' ? 'dark' : 'ligth');
   }
 
-  return (
-    <div>
-      {JSON.stringify(hotels)}
-      <Button onClick={switchTheme}>Hello button</Button>
-    </div>
-  )
+  return null;
+
+  // return (
+  //   <div>
+  //     {JSON.stringify(hotels)}
+  //     <Button onClick={switchTheme}>Hello button</Button>
+  //   </div>
+  // )
 }
 
 // export async function getStaticProps() {
