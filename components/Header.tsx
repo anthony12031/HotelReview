@@ -1,21 +1,15 @@
 import styled from 'styled-components'
+import SearchFrom from './SearchForm';
 
 type props = {
-    className: string
+    className?: string
 }
 
 function Header({className}: props) {
     return (
         <header className={className}>
             <img className="logo" src="img/logo.png" alt="hyatt logo" />
-            <form action="#" className="search">
-                <input className="search__input" type="text" placeholder="search hotels" />
-                <button className="search__button">
-                    <svg className="search__icon">
-                        <use xlinkHref="img/sprite.svg#icon-magnifying-glass"></use>
-                    </svg>
-                </button>
-            </form>
+            <SearchFrom />
             <nav className="user-nav">
                 <div className="user-nav__icon-box">
                     <svg className="user-nav__icon">
