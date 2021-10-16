@@ -18,13 +18,12 @@ function SearchForm({className}: props) {
 }
 
 const StyledForm = styled(SearchForm)`
-    &.search {
         flex: 0 0 40%;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        &__input{
+        .search__input{
             font-family: inherit;
             font-size: inherit;
             color: inherit;
@@ -42,7 +41,7 @@ const StyledForm = styled(SearchForm)`
             }
         }
 
-        &__button{
+        .search__button{
             border: none;
             background-color: var(--color-grey-light-2);
             &:focus{
@@ -53,16 +52,15 @@ const StyledForm = styled(SearchForm)`
             }
         }
 
-        &__input:focus + &__button {
+        .search__input:focus + .search__button {
             background-color: var(--color-grey-light-3);
         }
 
-        &__icon{
+        .search__icon{
             width: 2rem;
             height: 2rem;
             fill: var(--color-grey-dark-3);
         }
-    }
 `;
 
 export default StyledForm;
