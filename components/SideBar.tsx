@@ -42,9 +42,9 @@ const StyledSideBar = styled(SideBar)`
     flex: 0 0 18%;
     display: flex;
     flex-direction: column;
-    margin-top: 3.5rem;
 
     .side-nav{
+        margin-top: 3.5rem;
         &__item{
             font-size: 1.4rem;
             list-style: none;
