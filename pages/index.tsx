@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react';
 import Gallery from '../components/Gallery';
 import HotelOverview from '../components/HotelOverview';
+import HotelDetail from '../components/HotelDetail';
 
 function HomePage({hotels = []}: any) {
   const { theme, setTheme } = useTheme();
@@ -27,6 +28,7 @@ function HomePage({hotels = []}: any) {
     <>
       <Gallery />
       <HotelOverview />
+      <HotelDetail />
     </>
   )
 }
