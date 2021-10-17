@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import SvgIcon from './SvgIcon';
+import Button from './Button';
 
 type props = {
     className?: string
@@ -21,7 +22,7 @@ function HotelOverview({className}: props) {
                 </div>
                 <div className="overview__location">
                 <SvgIcon iconName="icon-location-pin" fill="var(--color-primary)"/>
-                <button className="btn-inline">Bogotá, Colombia</button>
+                <Button>Bogotá, Colombia</Button>
                 </div>
                 <div className="overview__rating">
                     <div className="overview__rating-average">8.6</div>
@@ -78,23 +79,6 @@ const StyledHotelOverview = styled(HotelOverview)`
         &__rating-count{
             font-size: .8rem;
             text-transform: uppercase;
-        }
-        .btn-inline {
-            border: none;
-            color: var(--color-primary);
-            font-size: inherit;
-            border-bottom: 1px solid currentColor;
-            padding-bottom: 2px;
-            display: inline-block;
-            background-color: transparent;
-            cursor: pointer;
-            transition: all .2s;
-            &:hover{
-                color: var(--color-grey-dark-1);
-            }
-            &:focus{
-                outline: none;
-            }
         }
     }
 `;
