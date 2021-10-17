@@ -24,9 +24,6 @@ const GlobalStyle = createGlobalStyle`
     --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
     
     font-size: 62.5%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     
   }
@@ -39,6 +36,9 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after{
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   body {

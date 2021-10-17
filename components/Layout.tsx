@@ -1,5 +1,6 @@
-import Header from './Header';
 import styled from 'styled-components'
+import Header from './Header';
+import SideBar from './SideBar';
 
 type props = {
     children: React.ReactNode
@@ -17,11 +18,6 @@ const Content = styled.div`
     display: flex;
 `;
 
-const SideBar = styled.nav`
-    background-color: var(--color-grey-dark-1);
-    flex: 0 0 18%;
-`;
-
 const Main = styled.main`
     background-color: #fff;
     flex: 1;
@@ -32,9 +28,9 @@ const Main = styled.main`
 function Layout({children}: props) {
     return (
         <Container>
-            <Header></Header>
+            <Header />
             <Content>
-                <SideBar>Side bar</SideBar>
+                <SideBar />
                 <Main>main content</Main>
             </Content>
         </Container>
