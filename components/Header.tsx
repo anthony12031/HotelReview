@@ -35,7 +35,7 @@ function Header({className}: props) {
 const StyledHeader = styled(Header)`
     height: 7rem;
     background-color: #fff;
-    border-bottom: var(--color-grey-light-2);
+    border-bottom: 1px solid var(--color-grey-light-2);
     display: flex;
     justify-content: space-between;
     align-items: center;

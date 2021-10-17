@@ -1,29 +1,9 @@
 import styled from 'styled-components'
+import SvgIcon from './SvgIcon';
 
 type SideBarProps = {
     className?: string
 }
-
-type SvgProps = {
-    className?: string,
-    iconName?: string,
-    fill?: string
-}
-
-function SvgIcon({className, iconName}: SvgProps) {
-    return (
-        <svg className={className}>
-            <use xlinkHref={`img/sprite.svg#${iconName}`}></use>
-        </svg>
-    )
-}
-
-const StyledSvgIcon = styled(SvgIcon)`
-    width: 1.75rem;
-    height: 1.75rem;
-    margin-right: 2rem;
-    fill: currentColor;
-`;
 
 const NavLink = styled.a`
       &:link,
@@ -41,6 +21,7 @@ const NavLink = styled.a`
 type ListItemsProps = {
     active?: boolean
 }
+
 
 const ListItem = styled.li<ListItemsProps>`
       &{
@@ -81,19 +62,19 @@ function SideBar({className}: SideBarProps) {
             <ul className="side-nav">
                 <ListItem active>
                     <NavLink href="#">
-                        <StyledSvgIcon iconName="icon-home"/>
+                        <SvgIcon iconName="icon-home"/>
                         <span>Home</span>
                     </NavLink>
                 </ListItem>  
                 <ListItem>
                     <NavLink href="#">
-                        <StyledSvgIcon iconName="icon-aircraft-take-off"/>
+                        <SvgIcon iconName="icon-aircraft-take-off"/>
                         <span>Flight</span>
                     </NavLink>
                 </ListItem>  
                 <ListItem>
                     <NavLink href="#">
-                        <StyledSvgIcon iconName="icon-key"/>
+                        <SvgIcon iconName="icon-key"/>
                         <span>Car Rental</span>
                     </NavLink>
                 </ListItem>  

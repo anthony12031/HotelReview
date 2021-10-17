@@ -7,7 +7,7 @@ type props = {
 }
 
 const Container = styled.div`
-    max-width: 120rem;
+    /* max-width: 120rem; */
     margin: 2rem 2rem;
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
@@ -31,7 +31,9 @@ function Layout({children}: props) {
             <Header />
             <Content>
                 <SideBar />
-                <Main>main content</Main>
+                <Main>
+                    {children}
+                </Main>
             </Content>
         </Container>
     )

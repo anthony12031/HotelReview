@@ -3,6 +3,8 @@ import {gql} from '@apollo/client';
 import Button from '../components/Button';
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react';
+import Gallery from '../components/Gallery';
+import HotelOverview from '../components/HotelOverview';
 
 function HomePage({hotels = []}: any) {
   const { theme, setTheme } = useTheme();
@@ -17,15 +19,16 @@ function HomePage({hotels = []}: any) {
   function switchTheme(){
     setTheme(theme==='ligth' ? 'dark' : 'ligth');
   }
+  if(!mounted) {
+    return null;
+  }
 
-  return null;
-
-  // return (
-  //   <div>
-  //     {JSON.stringify(hotels)}
-  //     <Button onClick={switchTheme}>Hello button</Button>
-  //   </div>
-  // )
+  return (
+    <>
+      <Gallery />
+      <HotelOverview />
+    </>
+  )
 }
 
 // export async function getStaticProps() {
