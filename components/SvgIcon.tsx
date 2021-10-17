@@ -3,8 +3,8 @@ import styled from 'styled-components'
 type SvgProps = {
     className?: string,
     iconName?: string,
-    width?: number,
-    heigth?: number,
+    width?: string,
+    heigth?: string,
     fill?: string
 }
 
@@ -19,7 +19,6 @@ function SvgIcon({className, iconName}: SvgProps) {
 const StyledSvgIcon = styled(SvgIcon)<SvgProps>`
     width: ${(props) => props.width ? props.width : '1.75rem'};
     height: ${(props) => props.heigth ? props.heigth : '1.75rem'};
-    margin-right: 2rem;
     fill: ${(props) => props.fill ? props.fill : 'currentColor'};
 `;
 

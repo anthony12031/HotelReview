@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import SearchFrom from './SearchForm';
+import SvgIcon from './SvgIcon';
 
 type props = {
     className?: string
@@ -12,15 +13,11 @@ function Header({className}: props) {
             <SearchFrom />
             <nav className="user-nav">
                 <div className="user-nav__icon-box">
-                    <svg className="user-nav__icon">
-                        <use xlinkHref="img/sprite.svg#icon-bookmark"></use>
-                    </svg>
+                    <SvgIcon iconName="icon-bookmark" width="2.25rem" heigth="2.25rem"/>
                     <span className="user-nav__notification">7</span>
                 </div>
                 <div className="user-nav__icon-box">
-                    <svg className="user-nav__icon">
-                        <use xlinkHref="img/sprite.svg#icon-chat"></use>
-                    </svg>
+                    <SvgIcon iconName="icon-chat" width="2.25rem" heigth="2.25rem"/>
                     <span className="user-nav__notification">13</span>
                 </div>
                 <div className="user-nav__user">
