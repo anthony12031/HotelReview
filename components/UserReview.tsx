@@ -1,49 +1,40 @@
 import styled from 'styled-components'
 
-type props = {
-    className?: string
+export interface Review {
+    id: string,
+    name: string,
+    reviewText: string,
+    date: string,
+    rating: number
 }
 
-function UserReviews({className}: props) {
+type UserReviewProps = {
+    className?: string,
+    review: Review
+}
+
+function Review({className, review}: UserReviewProps){
     return (
         <div className={className}>
-            <div className="user-reviews">
-                <figure className="review">
-                    <blockquote className="review__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
-                    </blockquote>
-                    <figcaption className="review__user">
-                        <img src="img/user-1.jpg" alt="user 1" className="review__photo" />
-                        <div className="review__user-box">
-                            <p className="review__user-name">Nick Smith</p>
-                            <p className="review__user-date">Feb 23rd, 2021</p>
-                        </div>
-                        <div className="review__rating">9.8</div>
-                    </figcaption>
-                </figure>
-                <figure className="review">
-                    <blockquote className="review__text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
-                    </blockquote>
-                    <figcaption className="review__user">
-                        <img src="img/user-1.jpg" alt="user 1" className="review__photo" />
-                        <div className="review__user-box">
-                            <p className="review__user-name">Nick Smith</p>
-                            <p className="review__user-date">Feb 23rd, 2021</p>
-                        </div>
-                        <div className="review__rating">9.8</div>
-                    </figcaption>
-                </figure>
-                </div>
+            <figure className="review">
+                <blockquote className="review__text">
+                    {review.reviewText}
+                </blockquote>
+                <figcaption className="review__user">
+                    <img src="img/user-1.jpg" alt="user 1" className="review__photo" />
+                    <div className="review__user-box">
+                        <p className="review__user-name">{review.name}</p>
+                        <p className="review__user-date">{review.date}</p>
+                    </div>
+                    <div className="review__rating">{review.rating}</div>
+                </figcaption>
+            </figure>
         </div>
-    );
+    )
 }
 
-const StyledUserReviews = styled(UserReviews)`
-.user-reviews {
-    flex: 1;
-    font-size: 1.4rem;
-    .review {
+const StyledReview = styled(Review)`
+      .review {
         background-color: #fff;
         box-shadow: var(--shadow-light);
         padding: 3rem;
@@ -81,6 +72,33 @@ const StyledUserReviews = styled(UserReviews)`
             font-weight: 300;
         }
     }
+`;
+
+type UserReviewsProps = {
+    className?: string,
+    userReviews: Review[]
+}
+
+function UserReviews({className, userReviews}: UserReviewsProps) {
+    return (
+        <div className={className}>
+            <div className="user-reviews">
+                {
+                    userReviews.map((review) => 
+                        (
+                            <StyledReview  key={review.id} review={review}/> 
+                        )
+                    )
+                }
+            </div>
+        </div>
+    );
+}
+
+const StyledUserReviews = styled(UserReviews)`
+.user-reviews {
+    flex: 1;
+    font-size: 1.4rem;
     }
 `;
 

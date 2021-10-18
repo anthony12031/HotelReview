@@ -6,39 +6,64 @@ import Gallery from '../components/Gallery';
 import HotelOverview from '../components/HotelOverview';
 import HotelDetail from '../components/HotelDetail';
 
-function HomePage({hotels = []}: any) {
+interface Hotel {
+  id: string,
+  name: string
+  stars: number
+  location: string
+  ratingAverage: number
+  totalVotes: number
+  description: string
+  features: string
+  userReviews: string
+}
+
+function HomePage(hotel: Hotel) {
+
+  const features = JSON.parse(hotel.features);
+  const reviews = JSON.parse(hotel.userReviews);
 
   return (
     <>
       <Gallery />
-      <HotelOverview />
-      <HotelDetail />
+      <HotelOverview stars={hotel.stars} location={hotel.location} ratingAverage={hotel.ratingAverage} totalVotes={hotel.totalVotes}/>
+      <HotelDetail 
+        description={hotel.description}
+        features={features}
+        userReviews={reviews}
+      />
     </>
   )
 }
 
-// export async function getStaticProps() {
-//   const { data } = await client.query({
-//     query: gql`
-//     query listHotelAPIS {
-//       listHotelAPIS {
-//         items {
-//           id
-//           name
-//           Description
-//           ImageURL
-//           Country
-//         }
-//       }
-//     }
-//     `,
-//   });
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+    query listHotels {
+      listHotels {
+        items {
+          id
+          name
+          stars
+          location
+          ratingAverage
+          totalVotes
+          description
+          features
+          userReviews
+        }
+      }
+    }
+    `,
+  });
 
-//   return {
-//     props: {
-//       hotels: data.listHotelAPIS.items,
-//     },
-//  };
-// }
+  const hotel = data.listHotels.items[0];
+
+  return {
+    props: {
+      ...hotel,
+    },
+ };
+}
 
 export default HomePage

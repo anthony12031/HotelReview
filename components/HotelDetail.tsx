@@ -1,26 +1,27 @@
 import styled from 'styled-components'
-import UserReviews from './UserReview';
+import UserReviews, {Review} from './UserReview';
 
 type props = {
-    className?: string
+    className?: string,
+    description: string,
+    features: string[],
+    userReviews: Review[]
 }
 
-function HotelDetail({className}: props) {
+function HotelDetail({className, description, features, userReviews}: props) {
     return (
         <div className={className}>
             <div className="detail">
                 <div className="description">
                     <p className="paragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.
-                    </p>
-                    <p className="paragraph">
-                        Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure aliquid aliquam.
+                        {description}
                     </p>
                     <ul className="list">
-                        <li className="list__item">Close to the beach</li>
-                        <li className="list__item">Breakfast included</li>
-                        <li className="list__item">Free airport shuttle</li>
-                        <li className="list__item">Pets allowed</li>
+                        {
+                            features.map((feature, index) => (
+                                <li key={index} className="list__item">{feature}</li>
+                            ))
+                        }
                     </ul>
                     <div className="recommend">
                         <p className="recommend__count">
@@ -34,7 +35,7 @@ function HotelDetail({className}: props) {
                         </p>
                     </div>
                 </div>
-                <UserReviews />
+                <UserReviews userReviews={userReviews}/>
             </div>
         </div>
     )

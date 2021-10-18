@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 type props = {
-    className?: string
+    className?: string,
+    imagesUrls?: string[];
 }
 
 function Gallery({className}: props){

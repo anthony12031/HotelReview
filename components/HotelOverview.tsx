@@ -3,10 +3,14 @@ import SvgIcon from './SvgIcon';
 import Button from './Button';
 
 type props = {
-    className?: string
+    className?: string,
+    stars: number,
+    location: string,
+    ratingAverage: number,
+    totalVotes: number
 }
 
-function HotelOverview({className}: props) {
+function HotelOverview({className, stars, location, ratingAverage, totalVotes}: props) {
     return (
         <div className={className}>
             <div className="overview">
@@ -14,19 +18,19 @@ function HotelOverview({className}: props) {
                     Hyatt Hotel
                 </h1>
                 <div className="overview__starts">
-                    <SvgIcon iconName="icon-star" fill="var(--color-primary)" />
-                    <SvgIcon iconName="icon-star" fill="var(--color-primary)" />
-                    <SvgIcon iconName="icon-star" fill="var(--color-primary)" />
-                    <SvgIcon iconName="icon-star" fill="var(--color-primary)" />
-                    <SvgIcon iconName="icon-star" fill="var(--color-primary)" />
+                    {
+                        Array(stars).fill(0).map((star, index) => (
+                            <SvgIcon key={index} iconName="icon-star" fill="var(--color-primary)" />
+                        ))
+                    }
                 </div>
                 <div className="overview__location">
                 <SvgIcon iconName="icon-location-pin" fill="var(--color-primary)"/>
-                <Button>Bogotá, Colombia</Button>
+                <Button>{location}</Button>
                 </div>
                 <div className="overview__rating">
-                    <div className="overview__rating-average">8.6</div>
-                    <div className="overview__rating-count">429 votes</div>
+                    <div className="overview__rating-average">{ratingAverage}</div>
+                    <div className="overview__rating-count">{totalVotes} votes</div>
                 </div>
             </div>
         </div>
