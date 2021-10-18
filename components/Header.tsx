@@ -1,17 +1,42 @@
 import styled from 'styled-components'
 import SearchFrom from './SearchForm';
 import SvgIcon from './SvgIcon';
+import Switch from "react-switch";
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react';
 
 type props = {
     className?: string
 }
 
 function Header({className}: props) {
+
+    const [themeChecked, setThemeChecked] = useState(false);  
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(()=> {
+        setMounted(true);
+    }, [])
+
+    function handleThemeChange() {
+       setThemeChecked(!themeChecked);
+       setTheme(theme==='ligth' ? 'dark' : 'ligth');
+    }
+
+    if(!mounted) {
+        return null;
+    }
+
     return (
         <header className={className}>
             <img className="logo" src="img/logo.png" alt="hyatt logo" />
             <SearchFrom />
             <nav className="user-nav">
+                <div className="user-nav__icon-box">
+                    <span className="user-nav__theme">Switch theme!</span>
+                <   Switch onChange={handleThemeChange} checked={themeChecked} uncheckedIcon={false} checkedIcon={false}/>
+                </div>    
                 <div className="user-nav__icon-box">
                     <SvgIcon iconName="icon-bookmark" width="2.25rem" heigth="2.25rem"/>
                     <span className="user-nav__notification">7</span>
@@ -68,6 +93,10 @@ const StyledHeader = styled(Header)`
             height: 2.25rem;
             width: 2.25rem;
             fill: var(--color-grey-dark-2);
+        }
+
+        &__theme{
+            margin-right: 2rem;
         }
         
         &__notification{

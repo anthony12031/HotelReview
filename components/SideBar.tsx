@@ -16,6 +16,9 @@ const NavLink = styled.a`
             position: relative;
             z-index: 10;    
         }
+        span {
+            margin-left: 2rem;
+        }
 `;
 
 type ListItemsProps = {

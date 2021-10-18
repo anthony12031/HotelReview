@@ -30,8 +30,7 @@ const GlobalStyle = createGlobalStyle`
     
   }
   [data-theme="dark"]{
-    --background-color: black;
-    --text-color: white;
+    --color-primary: #2fbfeb;
   }
 
   *,
