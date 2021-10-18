@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import Gallery from '../components/Gallery';
 import HotelOverview from '../components/HotelOverview';
 import HotelDetail from '../components/HotelDetail';
+import Booking from '../components/Booking';
 
 interface Hotel {
   id: string,
@@ -32,6 +33,7 @@ function HomePage(hotel: Hotel) {
         features={features}
         userReviews={reviews}
       />
+      <Booking />
     </>
   )
 }
