@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import SvgIcon from './SvgIcon';
+import useTranslation from 'next-translate/useTranslation'
 
 type SideBarProps = {
     className?: string
@@ -60,25 +61,26 @@ const ListItem = styled.li<ListItemsProps>`
 
 
 function SideBar({className}: SideBarProps) {
+    let {t} = useTranslation();
     return (
         <nav className={className}>
             <ul className="side-nav">
                 <ListItem active>
                     <NavLink href="#">
                         <SvgIcon iconName="icon-home"/>
-                        <span>Home</span>
+                        <span>{t("common:home")}</span>
                     </NavLink>
                 </ListItem>  
                 <ListItem>
                     <NavLink href="#">
                         <SvgIcon iconName="icon-aircraft-take-off"/>
-                        <span>Flight</span>
+                        <span>{t("common:flight")}</span>
                     </NavLink>
                 </ListItem>  
                 <ListItem>
                     <NavLink href="#">
                         <SvgIcon iconName="icon-key"/>
-                        <span>Car Rental</span>
+                        <span>{t("common:carRental")}</span>
                     </NavLink>
                 </ListItem>  
             </ul>

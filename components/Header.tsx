@@ -3,7 +3,10 @@ import SearchFrom from './SearchForm';
 import SvgIcon from './SvgIcon';
 import Switch from "react-switch";
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { route } from 'next/dist/server/router';
 
 type props = {
     className?: string
@@ -14,6 +17,7 @@ function Header({className}: props) {
     const [themeChecked, setThemeChecked] = useState(false);  
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+    let router = useRouter();
 
     useEffect(()=> {
         setMounted(true);
@@ -22,6 +26,10 @@ function Header({className}: props) {
     function handleThemeChange() {
        setThemeChecked(!themeChecked);
        setTheme(theme==='ligth' ? 'blue' : 'ligth');
+    }
+
+    function handleLocaleChange(locale: ChangeEvent<HTMLSelectElement>) {
+        router.push('/', '/', {locale: locale.target.value});
     }
 
     if(!mounted) {
@@ -35,8 +43,19 @@ function Header({className}: props) {
             <nav className="user-nav">
                 <div className="user-nav__icon-box">
                     <span className="user-nav__theme">Switch theme!</span>
-                <   Switch onChange={handleThemeChange} checked={themeChecked} uncheckedIcon={false} checkedIcon={false}/>
+                <Switch onChange={handleThemeChange} checked={themeChecked} uncheckedIcon={false} checkedIcon={false}/>
                 </div>    
+                <div className="user-nav__icon-box">
+                    <select  className="user-nav__language" id="language" value={router.locale} onChange={(event) => {handleLocaleChange(event)}}>
+                    {
+                        router.locales?.map((locale) => (
+                        <option key={locale} value={locale}>
+                             {locale}
+                        </option>
+                        ))
+                    }
+                    </select>
+                </div>
                 <div className="user-nav__icon-box">
                     <SvgIcon iconName="icon-bookmark" width="2.25rem" heigth="2.25rem"/>
                     <span className="user-nav__notification">7</span>
@@ -85,6 +104,13 @@ const StyledHeader = styled(Header)`
           position: relative;
         }
 
+        &__language{
+            border: none;
+            outline: none;
+            color: var(--color-grey-dark-2);
+            font-size: 1.2rem;
+        }
+
         &__icon{
             height: 2.25rem;
             width: 2.25rem;
@@ -93,6 +119,7 @@ const StyledHeader = styled(Header)`
 
         &__theme{
             margin-right: 2rem;
+            font-size: 1.2rem;
         }
         
         &__notification{

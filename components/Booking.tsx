@@ -1,18 +1,22 @@
 import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 
 type Props = {
     className?: string
 }
 
 function Booking({className}: Props){
+
+    let {t} = useTranslation();
+
     return (
         <div className={className}>
             <div className="cta">
                 <h2 className="cta__book-now">
-                    Good news there are free rooms!
+                    {t("common:goodNews")}
                 </h2>
                 <a className="btn" href="https://help.hyatt.com/en/faqs/reservations.html" target="_blank">
-                    <span className="btn__visible">Book now</span>
+                    <span className="btn__visible">{t("common:booking")}</span>
                     <span className="btn__invisible">Only 4 rooms left</span>
                 </a>
             </div>
