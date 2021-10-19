@@ -41,13 +41,9 @@ function Header({className}: props) {
                     <SvgIcon iconName="icon-bookmark" width="2.25rem" heigth="2.25rem"/>
                     <span className="user-nav__notification">7</span>
                 </div>
-                <div className="user-nav__icon-box">
-                    <SvgIcon iconName="icon-chat" width="2.25rem" heigth="2.25rem"/>
-                    <span className="user-nav__notification">13</span>
-                </div>
                 <div className="user-nav__user">
-                    <img src="img/user.jpg" alt="User photo" className="user-nav__user-photo" />
-                    <span className="user-nav__user-name">Jonas</span>
+                    <img src="img/anthony-profile.jpeg" alt="User photo" className="user-nav__user-photo" />
+                    <span className="user-nav__user-name">Anthony</span>
                 </div>
             </nav>
         </header>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import UserReviews, {Review} from './UserReview';
+import UserReviews, { Review } from './UserReview';
 
 type props = {
     className?: string,
@@ -8,7 +8,7 @@ type props = {
     userReviews: Review[]
 }
 
-function HotelDetail({className, description, features, userReviews}: props) {
+function HotelDetail({ className, description, features, userReviews }: props) {
     return (
         <div className={className}>
             <div className="detail">
@@ -35,7 +35,7 @@ function HotelDetail({className, description, features, userReviews}: props) {
                         </p>
                     </div>
                 </div>
-                <UserReviews userReviews={userReviews}/>
+                <UserReviews userReviews={userReviews} />
             </div>
         </div>
     )

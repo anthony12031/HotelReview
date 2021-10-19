@@ -31,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
   }
   [data-theme="dark"]{
     --color-primary: #2fbfeb;
+    --color-primary-light: #41c5ec;
+    --color-primary-dark: #258faf;
   }
 
   *,
