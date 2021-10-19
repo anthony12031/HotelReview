@@ -21,7 +21,7 @@ function Header({className}: props) {
 
     function handleThemeChange() {
        setThemeChecked(!themeChecked);
-       setTheme(theme==='ligth' ? 'dark' : 'ligth');
+       setTheme(theme==='ligth' ? 'blue' : 'ligth');
     }
 
     if(!mounted) {

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     
   }
-  [data-theme="dark"]{
+  [data-theme="blue"]{
     --color-primary: #2fbfeb;
     --color-primary-light: #41c5ec;
     --color-primary-dark: #258faf;
