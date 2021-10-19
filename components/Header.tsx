@@ -5,8 +5,6 @@ import Switch from "react-switch";
 import { useTheme } from 'next-themes'
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { route } from 'next/dist/server/router';
 
 type props = {
     className?: string

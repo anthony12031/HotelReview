@@ -15,7 +15,7 @@ function Booking({className}: Props){
                 <h2 className="cta__book-now">
                     {t("common:goodNews")}
                 </h2>
-                <a className="btn" href="https://help.hyatt.com/en/faqs/reservations.html" target="_blank">
+                <a className="btn" href="https://www.hyatt.com/es-ES/home" target="_blank">
                     <span className="btn__visible">{t("common:booking")}</span>
                     <span className="btn__invisible">Only 4 rooms left</span>
                 </a>
