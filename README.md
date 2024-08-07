@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+HotelReview
+HotelReview is a web application designed to provide users with detailed reviews and ratings of hotels. Whether you're planning a vacation or a business trip, HotelReview offers insights from previous guests, helping you make informed decisions about your stay. This project leverages modern web technologies to deliver a seamless and intuitive user experience.
 
-## Getting Started
+Features
+User Authentication: Secure user login and registration.
+Review Submission: Users can write and submit reviews for hotels.
+Rating System: A comprehensive rating system that allows users to rate hotels based on various criteria.
+Search and Filter: Easily search for hotels and filter results based on ratings, location, and more.
+Responsive Design: Optimized for desktop and mobile devices.
+Technologies Used
+Frontend: React, Redux, TypeScript, CSS (with TailwindCSS)
+Backend: Node.js, Express, PostgreSQL
+Authentication: JSON Web Tokens (JWT)
+Hosting: AWS, Docker
+Installation
+To set up the project locally, follow these steps:
 
-First, run the development server:
+Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+bash
+Copy code
+git clone https://github.com/anthony12031/HotelReview.git
+cd HotelReview
+Install dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash
+Copy code
+# Frontend
+cd frontend
+npm install
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# Backend
+cd ../backend
+npm install
+Set up environment variables:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Create a .env file in the root directory of both the frontend and backend, and add the necessary environment variables. For example:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+env
+Copy code
+# .env (Backend)
+DATABASE_URL=your_database_url
+JWT_SECRET=your_jwt_secret
+Run the application:
 
-## Learn More
+bash
+Copy code
+# Start the backend server
+cd backend
+npm start
 
-To learn more about Next.js, take a look at the following resources:
+# Start the frontend
+cd ../frontend
+npm start
+The application will be available at http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Usage
+Sign Up: Create an account to start reviewing hotels.
+Log In: Access your account to write reviews and rate hotels.
+Search Hotels: Use the search bar to find hotels based on your preferences.
+Write Reviews: Share your experience by writing a detailed review.
+Rate Hotels: Rate hotels based on different criteria such as cleanliness, location, service, etc.
+Contributing
+We welcome contributions from the community. To contribute:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Fork the repository.
+Create a new branch with a descriptive name.
+Make your changes and commit them with clear messages.
+Push your changes to your fork.
+Submit a pull request with a detailed explanation of your changes.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contact
+For questions or feedback, please reach out to Anthony Jason Vargas Sepúlveda.
