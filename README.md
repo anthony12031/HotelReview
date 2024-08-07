@@ -1,4 +1,4 @@
-HotelReview
+# HotelReview
 HotelReview is a web application designed to provide users with detailed reviews and ratings of hotels. Whether you're planning a vacation or a business trip, HotelReview offers insights from previous guests, helping you make informed decisions about your stay. This project leverages modern web technologies to deliver a seamless and intuitive user experience.
 
 Features
@@ -25,45 +25,57 @@ Install dependencies:
 
 bash
 Copy code
-# Frontend
+## Frontend
+```
 cd frontend
 npm install
+```
 
-# Backend
+## Backend
+```
 cd ../backend
 npm install
+```
 Set up environment variables:
 
 Create a .env file in the root directory of both the frontend and backend, and add the necessary environment variables. For example:
 
 env
 Copy code
-# .env (Backend)
+### .env (Backend)
+```
 DATABASE_URL=your_database_url
 JWT_SECRET=your_jwt_secret
+```
 Run the application:
 
 bash
 Copy code
-# Start the backend server
+### Start the backend server
+```
 cd backend
 npm start
+```
 
-# Start the frontend
+### Start the frontend
+```
 cd ../frontend
 npm start
 The application will be available at http://localhost:3000.
+```
 
-Usage
-Sign Up: Create an account to start reviewing hotels.
-Log In: Access your account to write reviews and rate hotels.
-Search Hotels: Use the search bar to find hotels based on your preferences.
-Write Reviews: Share your experience by writing a detailed review.
-Rate Hotels: Rate hotels based on different criteria such as cleanliness, location, service, etc.
-Contributing
+## Usage
+- Sign Up: Create an account to start reviewing hotels.
+- Log In: Access your account to write reviews and rate hotels.
+- Search Hotels: Use the search bar to find hotels based on your preferences.
+- Write Reviews: Share your experience by writing a detailed review.
+- Rate Hotels: Rate hotels based on different criteria such as cleanliness, location, service, etc.
+
+  
+## Contributing
 We welcome contributions from the community. To contribute:
 
-Fork the repository.
+## Fork the repository.
 Create a new branch with a descriptive name.
 Make your changes and commit them with clear messages.
 Push your changes to your fork.
@@ -71,5 +83,5 @@ Submit a pull request with a detailed explanation of your changes.
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Contact
+## Contact
 For questions or feedback, please reach out to Anthony Jason Vargas Sepúlveda.
